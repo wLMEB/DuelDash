@@ -14,6 +14,10 @@ async function saveResult(raceID, TrackA, TrackB, TimeA, TimeB) {
   await db.put({ _id: raceID, TrackA, TrackB, TimeA, TimeB });
 }
 
+async function updateID(doc){
+  await db.put(doc)
+}
+
 async function removeResult(doc) {
   db.remove(doc);
 }
@@ -39,5 +43,6 @@ module.exports = {
   loadResult,
   loadAllResults,
   deleteAllResults,
+  updateID,
   modifyRace
 };

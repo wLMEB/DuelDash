@@ -34,4 +34,5 @@
     "@electron/fuses": "^1.8.0",
     "electron": "34.2.0"
   }
+  
 }

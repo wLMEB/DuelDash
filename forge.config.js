@@ -4,6 +4,7 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 module.exports = {
   packagerConfig: {
     asar: true,
+    dir:"C:\\Documents\\Electron"
   },
   rebuildConfig: {},
   makers: [
@@ -17,7 +18,7 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-deb',
-      config: {},
+      config: {dir:"C:\\Documents\\Electron"},
     },
     {
       name: '@electron-forge/maker-rpm',

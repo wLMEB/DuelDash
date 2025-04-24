@@ -109,7 +109,7 @@ function createMatchElement(match) {
       <td class="tournament-bracket__score">
    <abbr class="tournament-bracket__tag" >Second </abbr></td>
    <td class="tournament-bracket__score">
-   <abbr class="tournament-bracket__tag" >Final  </abbr></td>
+   <abbr class="tournament-bracket__tag" >Final (ms)  </abbr></td>
    <td class="tournament-bracket__score">
    <abbr class="tournament-bracket__tag" >Racers  </abbr></td>`;
   tbody.appendChild(des);
@@ -134,7 +134,7 @@ function createMatchElement(match) {
                   <abbr class="tournament-bracket__code" >${racer.RacerID}</abbr>
               </td>
               <td class="tournament-bracket__score">
-                  <span class="tournament-bracket__number">${racer.Score}</span>
+                  <span class="tournament-bracket__number">${parseInt(racer.Score)/2}</span>
               </td>
               
               <td class="tournament-bracket__2">

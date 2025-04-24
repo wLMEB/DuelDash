@@ -130,8 +130,11 @@ function populateScore(pair, time1, time2) {
   }
   return null;
 }
-async function updateRace(response, raceID, AID, BID, ATime, BTime) {
+async function updateRace(response, AID, BID, ATime, BTime) {
   try {
+    let idDoc = await resultDB.loadResult("0");
+    raceID = parseInt(idDoc.count);
+    console.log(raceID)
     //add race reult to matchDB
     let doc = await matchDB.loadAllMatches(); // all result
     // console.log(doc)
@@ -205,7 +208,10 @@ async function updateRace(response, raceID, AID, BID, ATime, BTime) {
     await racerDB.modifyRacer(racerB);
 
     //add race result to resultDB
-    await resultDB.saveResult(raceID, AID, BID, ATime, BTime);
+    await resultDB.saveResult(String(raceID), AID, BID, ATime, BTime);
+    idDoc.count = raceID+1;
+    console.log(idDoc)
+    await resultDB.updateID(idDoc);
 
     let responseText = "Racer and Result Table updated";
     response.writeHead(200, headerFields);
@@ -217,6 +223,7 @@ async function updateRace(response, raceID, AID, BID, ATime, BTime) {
     response.write("<p>In updateRace</p>");
     response.write(`<pre>${err}</pre>`);
     response.end();
+    console.log(err)
   }
 }
 function recheckWinner(pair) {
@@ -256,9 +263,11 @@ async function changeMatch(response, raceID, racerID) {
           (element) => element == raceID
         );
         console.log(`order: ${order}`);
-        console.log(`compare ${curMatch.pair[0].RacerID} with ${String(racerID)}`)
+        console.log(
+          `compare ${curMatch.pair[0].RacerID} with ${String(racerID)}`
+        );
         let racer = curMatch.pair[0].RacerID === String(racerID) ? 0 : 1;
-        console.log(`result is ${racer}`)
+        console.log(`result is ${racer}`);
         console.log(`curent racer ${racer}`);
 
         if (order !== -1) {
@@ -361,7 +370,7 @@ async function voidMatch(response, raceID, racerID) {
         console.log(`curent racer ${racer}`);
 
         if (order !== -1) {
-          curMatch.pair[racer].Score = -1;
+          curMatch.pair[racer].Score = -2;
 
           if (curMatch.done) {
             let [winner, looser] = recheckWinner(curMatch.pair);
@@ -547,8 +556,10 @@ async function MatchDBInit(response, participants) {
       await matchDB.MatchInit(doc);
       console.log(doc);
     }
-
     console.log("matchDB initialized");
+    let idDoc = {_id: "0", count: 1 };
+    await resultDB.updateID(idDoc);
+    console.log("resultID initialized");
 
     response.writeHead(200, headerFields);
     response.write("Match database initialized");
@@ -557,6 +568,7 @@ async function MatchDBInit(response, participants) {
     response.writeHead(500, headerFields);
     response.write("Competition already started!");
     response.write("Additional changes will not be accepted.");
+    console.log(err);
     response.end();
   }
 }
@@ -656,7 +668,6 @@ async function basicServer(request, response) {
     //update?Race_ID=9&A_ID=8&B_ID=54&A_Time=7477&B_Time=8848
     await updateRace(
       response,
-      options.Race_ID,
       options.A_ID,
       options.B_ID,
       options.A_Time,
