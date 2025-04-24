@@ -1,0 +1,302 @@
+#views {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, sans-serif;
+}
+body {
+  background-color: #f1f1f1;
+}
+.left {
+  width: 40%;
+  padding: 20px;
+}
+.right {
+  width: 60%;
+  padding: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif; /* Replace 'Roboto' with your desired font */
+  font-weight: bold; /* Optional: Make the font bold */
+  color: #333; /* Optional: Set a custom color for headings */
+}
+th {
+  background-color: #8e8f8f; /* Blue background */
+  border: 1px solid #a2a2a2;
+  text-align: center;
+  padding: 0.25rem;
+  color: white; /* White text */
+}
+td {
+  border: 1px solid #a2a2a2;
+  text-align: center;
+  padding: 0.25rem;
+  text-align: center;
+  width: auto;
+}
+#dataTable th:nth-child(1),
+#dataTable td:nth-child(1) {
+  width: 45%; /* Set the width of the first column */
+}
+
+/* Adjust the width of the second column */
+#dataTable th:nth-child(2),
+#dataTable td:nth-child(2) {
+  width: 15%; /* Set the width of the second column */
+}
+
+/* Adjust the width of the third column */
+#dataTable th:nth-child(3),
+#dataTable td:nth-child(3) {
+  width: 25%; /* Set the width of the third column */
+}
+
+.raceTables {
+  width: 100%;
+  margin: 1rem;
+}
+
+#raceTable th:nth-child(1),
+#raceTable td:nth-child(1) {
+  width: 10%; /* Set the width of the first column */
+}
+
+/* Adjust the width of the second column */
+#raceTable th:nth-child(2),
+#raceTable td:nth-child(2) {
+  width: 55%; /* Set the width of the second column */
+}
+
+/* Adjust the width of the third column */
+#raceTable th:nth-child(3),
+#raceTable td:nth-child(3) {
+  width: 10%; /* Set the width of the third column */
+}
+#raceTable th:nth-child(4),
+#raceTable td:nth-child(4) {
+  width: 30%; /* Set the width of the third column */
+}
+
+.comp-button {
+  margin: 5%;
+  text-align: center; /* Ensure text alignment is centered */
+}
+
+.Name {
+  font-size: 30px;
+  /* font-style: oblique; */
+  font-family: "Times New Roman", Times, serif;
+  margin: 2%;
+}
+#Submit {
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block for proper spacing */
+  font-size: 1rem; /* Font size */
+  padding: 5px 10px; /* Add padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+#Submit:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+#fileInput {
+  background-color: #d3d3d3; /* Light grey background */
+  color: black; /* Black text */
+  border: 1px solid #ccc; /* Light grey border */
+  padding: 10px; /* Add padding */
+  font-size: 1rem; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+#Submit:hover {
+  background-color: #bfbfbf; /* Darker grey on hover */
+}
+
+.button-name {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block for proper spacing */
+  font-size: 1rem; /* Corrected font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.button-name:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.button-delete {
+  background-color: #ff4c4c; /* Red background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block for proper spacing */
+  font-size: 1rem; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.button-delete:hover {
+  background-color: #e60000; /* Darker red on hover */
+}
+
+.button-edit {
+  background-color: #ffd700; /* Yellow background */
+  color: black; /* Black text */
+  border: none; /* Remove border */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block for proper spacing */
+  font-size: 1rem; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.button-edit:hover {
+  background-color: #e6c200; /* Darker yellow on hover */
+}
+
+.mass-delete {
+  margin: 20px 0; /* Add spacing around the div */
+  padding: 10px; /* Add padding inside the div */
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light background color */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.mass-delete input[type="text"] {
+  width: 100%; /* Set the width of the input box */
+  padding: 10px; /* Add padding inside the input box */
+  font-size: 1rem; /* Set font size */
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 10px; /* Add spacing below the input box */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.mass-delete button {
+  background-color: #ff4c4c; /* Red background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  padding: 5px 10px; /* Add padding */
+  font-size: 1rem; /* Set font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.mass-delete button:hover {
+  background-color: #e60000; /* Darker red on hover */
+}
+.penal-button {
+  background-color: #ffb74c; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block for proper spacing */
+  font-size: 1rem; /* Corrected font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.penal-button:hover {
+  background-color: #eb9f2c; /* Darker green on hover */
+}
+.dis-button {
+  background-color: #ff4c4c; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block for proper spacing */
+  font-size: 1rem; /* Corrected font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.dis-button:hover {
+  background-color: #e60000; /* Darker green on hover */
+}
+.back-button {
+  background-color: #5a5a5a; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block for proper spacing */
+  font-size: 1rem; /* Corrected font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.back-button:hover {
+  background-color: #000000; /* Darker green on hover */
+}
+#startBtn {
+  background-color: #237b2c; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block for proper spacing */
+  padding: 0.3rem;
+  font-size: 1.25rem; /* Corrected font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  margin-right: 2px;
+}
+#startBtn:hover {
+  background-color: #3fdc4f;
+}
+#newBtn {
+  background-color: #957e2a; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block for proper spacing */
+  padding: 0.3rem;
+  font-size: 1.25rem; /* Corrected font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  margin-left: 2px;
+}
+#newBtn:hover {
+  background-color: #e0be41;
+}
+#textInput {
+  width: 100%;
+}
+
