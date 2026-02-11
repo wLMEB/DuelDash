@@ -8,5 +8,8 @@ Code base for DuelDash software component. It contains a web application that ho
 
 
 ## Example views:
-
+![Real time race result in both laptop and mobile view](https://github.com/wLMEB/DuelDash/blob/main/Website.png )
+![Race Coordinator App landing view](https://github.com/wLMEB/DuelDash/blob/main/Coordinator%20APP(Landing).png)
+![Race Coordinator App racer view](https://github.com/wLMEB/DuelDash/blob/main/Coordinator%20APP(Race%20view).png)
+![Database structure with data flow pipeline](https://github.com/wLMEB/DuelDash/blob/main/Database.png)
 
